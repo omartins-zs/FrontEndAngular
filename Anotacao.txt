@@ -1,0 +1,41 @@
+
+
+Inicio Preparação do Projeto em Angular 16 e .NET
+
+Comandos
+
+Instalar Angular
+npm install -g @angular/cli
+
+npm install -g @angular/cli@16.1.8
+
+Ver a versão do Angular
+ng version
+
+Criar projeto
+
+ng new projectangular
+
+Acessar o projeto
+
+cd projectangular
+
+Instalando Extensoes
+
+Angular Schematics
+
+Angular Lancguage
+
+Angular Snippets
+
+Angular Essentials
+
+ng generate service services/funcionario
+
+ng g c pages/cadastro
+
+ng g c pages/home
+
+ng g c componentes/funcionario-form
+
+Explicacao g = Generate | c = component
