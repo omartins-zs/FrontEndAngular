@@ -20,6 +20,11 @@ export class FuncionarioService {
         return this.http.get<Response<Funcionario[]>>(this.apiUrl);
     }
 
+    // Endpoint de GetById
+    GetFuncionario(id: number): Observable<Response<Funcionario>> {
+        return this.http.get<Response<Funcionario>>(`${this.apiUrl}/${id}`);
+    }
+
     // Endpoint POST
     CreateFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
         return this.http.post<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
