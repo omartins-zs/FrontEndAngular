@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Funcionario } from 'src/app/models/Funcionarios';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
     selector: 'app-funcionario-form',
@@ -19,14 +20,15 @@ export class FuncionarioFormComponent implements OnInit {
 
     ngOnInit(): void {
 
+        console.log(this.dadosFuncionario)
 
         this.funcionarioForm = new FormGroup({
-            id: new FormControl(0),
-            nome: new FormControl('', [Validators.required]),
-            sobrenome: new FormControl('', [Validators.required]),
-            departamento: new FormControl('', [Validators.required]),
-            turno: new FormControl('', [Validators.required]),
-            ativo: new FormControl(true),
+            id: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.id : 0),
+            nome: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.nome : '', [Validators.required]),
+            sobrenome: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.sobrenome : '', [Validators.required]),
+            departamento: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.departamento : '', [Validators.required]),
+            turno: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.turno : '', [Validators.required]),
+            ativo: new FormControl(this.dadosFuncionario ? this.dadosFuncionario?.ativo : true),
             dataDeCriacao: new FormControl(new Date()),
             dataDeAlteracao: new FormControl(new Date())
         });
