@@ -13,15 +13,18 @@ export class HomeComponent implements OnInit {
 
     constructor(private funcionarioService: FuncionarioService) { }
 
-
     ngOnInit(): void {
-        this.funcionarioService.GetFuncionarios().subscribe(
-            data => {
-                console.log(data);
-            },
-            error => {
-                console.error('Ocorreu um erro ao obter os funcionários:', error);
-            }
-        );
+        this.funcionarioService.GetFuncionarios().subscribe((data) => {
+            console.log(data)
+            const dados = data.dados;
+            dados.map((item) => {
+                item.dataDeCriacao = new Date(item.dataDeCriacao!).toLocaleDateString('pt-BR');
+            });
+
+            this.funcionariosGeral = dados;
+            this.funcionarios = dados;
+            // this.funcionarios = data.dados;
+            // this.funcionariosGeral = data.dados;
+        })
     }
 }
