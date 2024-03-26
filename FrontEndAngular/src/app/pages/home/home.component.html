@@ -1,4 +1,4 @@
-<div>
+<div class="funcionario-box">
     <button routerLink="/cadastro"> Cadastrar novo funcionário</button>
 
     <div class="input-box">
@@ -21,14 +21,18 @@
     <tbody *ngFor="let funcionario of funcionarios">
         <tr>
             <td>
-                <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
-                <img src="assets/images/Inativo.png" alt="" style="height: 20px; width: 20px;">
+                <div *ngIf="funcionario.ativo == true; else inativo">
+                    <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
+                </div>
+                <ng-template #inativo>
+                    <img src="assets/images/Inativo.png" style="height: 20px; width: 20px" alt="">
+                </ng-template>
             </td>
             <td>{{funcionario.nome}}</td>
             <td>{{funcionario.sobrenome}}</td>
             <td>{{funcionario.departamento}}</td>
             <td>
-                <button>Editar</button>
+                <button routerLink="/editar/{{funcionario.id}}">Editar</button>
                 <button>Detalhes</button>
             </td>
             <td>
