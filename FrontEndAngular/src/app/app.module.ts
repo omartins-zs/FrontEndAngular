@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { EditarComponent } from './pages/editar/editar.component';
 import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HomeComponent,
         CadastroComponent,
         FuncionarioFormComponent,
+        EditarComponent
     ],
     imports: [
         BrowserModule,
