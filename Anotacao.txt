@@ -30,12 +30,26 @@ Angular Snippets
 
 Angular Essentials
 
+// Cria o Pages Home
+ng g c pages/home
+
+ng g environments
+
 ng generate service services/funcionario
 
 ng g c pages/cadastro
 
-ng g c pages/home
-
-ng g c componentes/funcionario-form
+ng g c components/funcionario-form
 
 Explicacao g = Generate | c = component
+
+ng g c pages/editar
+
+Limpar o Cache
+npm cache clean --force
+
+Reconstruir o Projeto
+ng build
+
+Reiniciar o Servidor de Desenvolvimento
+ng serve
