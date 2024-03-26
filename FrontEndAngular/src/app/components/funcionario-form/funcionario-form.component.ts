@@ -10,8 +10,22 @@ import { Funcionario } from 'src/app/models/Funcionarios';
 })
 
 export class FuncionarioFormComponent implements OnInit {
+    @Output() onSubmit = new EventEmitter<Funcionario>();
+
+    funcionarioForm!: FormGroup;
+
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
+
+        this.funcionarioForm = new FormGroup({
+            id: new FormControl(0),
+            nome: new FormControl('', [Validators.required]),
+            sobrenome: new FormControl( '', [Validators.required]),
+            departamento: new FormControl('', [Validators.required]),
+            turno: new FormControl('', [Validators.required]),
+            ativo: new FormControl(true),
+            dataDeCriacao: new FormControl(new Date()),
+            dataDeAlteracao: new FormControl(new Date())
+        });
     }
 
 }
