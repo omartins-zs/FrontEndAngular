@@ -12,6 +12,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HomeComponent,
         CadastroComponent,
         FuncionarioFormComponent,
-        EditarComponent
+        EditarComponent,
+        DetalhesComponent
     ],
     imports: [
         BrowserModule,
