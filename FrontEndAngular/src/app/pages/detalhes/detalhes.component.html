@@ -4,35 +4,35 @@
     </h1>
 </div>
 
-<div>
+<div *ngIf="funcionario">
     <form action="">
         <div class="input-box">
             <label for="">Nome:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.nome}}">
         </div>
         <div class="input-box">
             <label for="">Sobrenome:</label>
-            <input type="text">
-        </div>
-        <div class="input-box">
-            <label for="">Turno:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.sobrenome}}">
         </div>
         <div class="input-box">
             <label for="">Departamento:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.departamento}}">
+        </div>
+        <div class="input-box">
+            <label for="">Turno:</label>
+            <input type="text" value="{{funcionario.turno}}">
         </div>
         <div class="input-box">
             <label for="">Situacao:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.ativo}}">
         </div>
         <div class="input-box">
             <label for="">Data de Criação:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.dataDeCriacao}}">
         </div>
         <div class="input-box">
             <label for="">Data de Alteração:</label>
-            <input type="text">
+            <input type="text" value="{{funcionario.dataDeAlteracao}}">
         </div>
 
         <div class="btn-box">
