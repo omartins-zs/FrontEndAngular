@@ -34,4 +34,9 @@ export class FuncionarioService {
     EditFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
         return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
     }
+
+    // Endpoint PUT - InativaFuncionario
+    InativaFuncionario(id: number): Observable<Response<Funcionario[]>> {
+        return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}/InativaFuncionario/${id}`, id);
+    }
 }
