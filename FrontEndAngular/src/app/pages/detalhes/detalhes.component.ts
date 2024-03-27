@@ -19,8 +19,13 @@ export class DetalhesComponent implements OnInit {
         const id = Number(this.route.snapshot.paramMap.get('id'));
 
         this.funcionarioService.GetFuncionario(id).subscribe((data) => {
-            console.log(data)
+
+            const dados = data.dados;
+            dados.dataDeCriacao = new Date(dados.dataDeCriacao!).toLocaleDateString("pt-BR");
+            dados.dataDeAlteracao = new Date(dados.dataDeAlteracao!).toLocaleDateString("pt-BR");
+
             this.funcionario = data.dados;
+
         });
 
         throw new Error('Method not implemented.');
