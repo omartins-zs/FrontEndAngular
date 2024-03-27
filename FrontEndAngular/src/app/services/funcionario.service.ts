@@ -37,6 +37,7 @@ export class FuncionarioService {
 
     // Endpoint PUT - InativaFuncionario
     InativaFuncionario(id: number): Observable<Response<Funcionario[]>> {
-        return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}/InativaFuncionario/${id}`, id);
+        const url = `${this.apiUrl}/InativaFuncionario/${id}`;
+        return this.http.put<Response<Funcionario[]>>(url, id);
     }
 }
