@@ -28,7 +28,8 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
