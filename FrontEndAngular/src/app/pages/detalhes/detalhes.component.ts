@@ -11,14 +11,15 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class DetalhesComponent implements OnInit {
 
     funcionario?: Funcionario;
-
+    id!: number;
+    
     constructor(private funcionarioService: FuncionarioService, private route: ActivatedRoute, private router: Router) { }
 
     ngOnInit(): void {
 
-        const id = Number(this.route.snapshot.paramMap.get('id'));
+        this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-        this.funcionarioService.GetFuncionario(id).subscribe((data) => {
+        this.funcionarioService.GetFuncionario(this.id).subscribe((data) => {
 
             const dados = data.dados;
             dados.dataDeCriacao = new Date(dados.dataDeCriacao!).toLocaleDateString("pt-BR");
@@ -30,7 +31,6 @@ export class DetalhesComponent implements OnInit {
 
         throw new Error('Method not implemented.');
     }
-
 
 
 }
