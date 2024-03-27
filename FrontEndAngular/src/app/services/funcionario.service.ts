@@ -36,24 +36,7 @@ export class FuncionarioService {
     }
 
     // Endpoint PUT - InativaFuncionario
-
-    /**
-     * Realiza uma requisição PUT para inativar um funcionário.
-     * @param id O identificador do funcionário a ser inativado.
-     * @returns Um Observable que emite uma Response contendo um array de objetos do tipo Funcionario[].
-     */
-    // InativaFuncionario(id: number): Observable<Response<Funcionario[]>> {
-    //     const url = `${this.apiUrl}/InativaFuncionario/${id}`;
-    //     return this.http.put<Response<Funcionario[]>>(url, id);
-    // }
-
-    /**
-    * Realiza uma requisição PUT para inativar um funcionário.
-    * @param id O identificador do funcionário a ser inativado.
-    * @returns Um Observable que pode emitir qualquer tipo de dado.
-    */
-    InativaFuncionario(id: number): Observable<any> {
-        const url = `${this.apiUrl}/inativaFuncionario?id=${id}`;
-        return this.http.put(url, {});
+    InativaFuncionario(id: number): Observable<Response<Funcionario[]>> {
+        return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}/inativaFuncionario?id=${id}`, id);
     }
 }
