@@ -12,7 +12,7 @@ export class DetalhesComponent implements OnInit {
 
     funcionario?: Funcionario;
     id!: number;
-    
+
     constructor(private funcionarioService: FuncionarioService, private route: ActivatedRoute, private router: Router) { }
 
     ngOnInit(): void {
@@ -28,9 +28,11 @@ export class DetalhesComponent implements OnInit {
             this.funcionario = data.dados;
 
         });
-
-        throw new Error('Method not implemented.');
     }
 
-
+    InativaFuncionario() {
+        this.funcionarioService.InativaFuncionario(this.id).subscribe((data) => {
+            this.router.navigate(['']);
+        });
+    }
 }
