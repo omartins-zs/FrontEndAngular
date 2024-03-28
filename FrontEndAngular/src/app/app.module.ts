@@ -19,6 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
         MatButtonModule,
         MatCardModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        MatTableModule
     ],
     providers: [],
     bootstrap: [AppComponent]
