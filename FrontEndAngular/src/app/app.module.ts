@@ -14,6 +14,10 @@ import { FuncionarioFormComponent } from './components/funcionario-form/funciona
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 
+/* Angular Material */
+import {MatButtonModule} from '@angular/material/button';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -29,7 +33,8 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
