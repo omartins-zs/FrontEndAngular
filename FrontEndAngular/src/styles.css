@@ -11,7 +11,8 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
+    overflow: hidden;
 }
 
 mat-card {
@@ -21,7 +22,7 @@ mat-card {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 3rem;
     margin-top: 5rem;
 }
 
