@@ -16,6 +16,9 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 
 /* Angular Material */
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import {MatButtonModule} from '@angular/material/button';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        MatButtonModule
+        MatButtonModule,
+        MatCardModule,
+        MatInputModule,
+        MatSelectModule
     ],
     providers: [],
     bootstrap: [AppComponent]
