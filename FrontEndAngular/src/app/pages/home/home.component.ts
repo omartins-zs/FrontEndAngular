@@ -12,7 +12,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class HomeComponent implements OnInit {
     funcionarios: Funcionario[] = [];
     funcionariosGeral: Funcionario[] = [];
-    columnsToDisplay = ['Situacao', 'Nome', 'Sobrenome', 'Departamento', 'Ações', 'Teste'];
+    columnsToDisplay = ['Situacao', 'Nome', 'Sobrenome', 'Departamento', 'Ações', 'Excluir'];
 
     constructor(private funcionarioService: FuncionarioService, public dialog: MatDialog) { }
 
@@ -40,17 +40,13 @@ export class HomeComponent implements OnInit {
         })
     }
 
-    openDialog() {
-        // openDialog(id : number){
+    openDialog(id: number) {
         this.dialog.open(ExcluirComponent, {
-            width: '350px',
-            height: '350px',
+            width: '450px',
+            height: '450px',
             data: {
-                // id: id
+                id: id
             }
-            //   })
-
         })
-        // }
     }
 }
