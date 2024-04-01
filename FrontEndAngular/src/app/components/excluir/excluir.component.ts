@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Funcionario } from 'src/app/models/Funcionarios';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
@@ -17,7 +17,8 @@ export class ExcluirComponent implements OnInit {
     constructor(
         private FuncionarioService: FuncionarioService,
         private router: Router,
-        @Inject(MAT_DIALOG_DATA) public data: any) {
+        @Inject(MAT_DIALOG_DATA) public data: any,
+        private ref: MatDialogRef<ExcluirComponent>) {
 
     }
 
@@ -25,11 +26,17 @@ export class ExcluirComponent implements OnInit {
         this.inputdata = this.data;
 
         this.FuncionarioService.GetFuncionario(this.inputdata.id).subscribe((data) => {
-          this.funcionario = data.dados;
-          console.log(this.funcionario)
+            this.funcionario = data.dados;
+            console.log(this.funcionario)
         })
         console.log(this.data);
         // throw new Error('Method not implemented.');
     }
 
+    excluir() {
+        this.FuncionarioService.ExcluirFuncionario(this.inputdata.id).subscribe(data => {
+            this.ref.close();
+            window.location.reload();
+        });
+    }
 }
