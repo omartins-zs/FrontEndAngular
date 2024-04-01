@@ -44,4 +44,8 @@ export class FuncionarioService {
     InativaFuncionario(id: number): Observable<Response<Funcionario[]>> {
         return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}/inativaFuncionario?id=${id}`, id);
     }
+
+    ExcluirFuncionario(id: number): Observable<Response<Funcionario[]>> {
+        return this.http.delete<Response<Funcionario[]>>(`${this.apiUrl}?id=${id}`)
+    }
 }
