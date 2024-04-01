@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Funcionario } from 'src/app/models/Funcionarios';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
@@ -10,6 +11,9 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class ExcluirComponent implements OnInit {
 
+    inputdata: any;
+    funcionar!: Funcionario;
+
     constructor(
         private FuncionarioService: FuncionarioService,
         private router: Router,
@@ -18,7 +22,9 @@ export class ExcluirComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
+        this.inputdata = this.data;
+        console.log(this.data);
+        // throw new Error('Method not implemented.');
     }
 
 }
