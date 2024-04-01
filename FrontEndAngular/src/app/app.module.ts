@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ExcluirComponent } from './components/excluir/excluir.component';
 
 
 
@@ -31,7 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         CadastroComponent,
         FuncionarioFormComponent,
         EditarComponent,
-        DetalhesComponent
+        DetalhesComponent,
+        ExcluirComponent
     ],
     imports: [
         BrowserModule,
@@ -44,7 +46,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatCardModule,
         MatInputModule,
         MatSelectModule,
-        MatTableModule
+        MatTableModule,
+        MatDialogModule
     ],
     providers: [],
     bootstrap: [AppComponent]
