@@ -12,7 +12,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class ExcluirComponent implements OnInit {
 
     inputdata: any;
-    funcionar!: Funcionario;
+    funcionario!: Funcionario;
 
     constructor(
         private FuncionarioService: FuncionarioService,
@@ -23,6 +23,11 @@ export class ExcluirComponent implements OnInit {
 
     ngOnInit(): void {
         this.inputdata = this.data;
+
+        this.FuncionarioService.GetFuncionario(this.inputdata.id).subscribe((data) => {
+          this.funcionario = data.dados;
+          console.log(this.funcionario)
+        })
         console.log(this.data);
         // throw new Error('Method not implemented.');
     }
