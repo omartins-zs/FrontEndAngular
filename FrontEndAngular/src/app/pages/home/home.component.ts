@@ -12,6 +12,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class HomeComponent implements OnInit {
     funcionarios: Funcionario[] = [];
     funcionariosGeral: Funcionario[] = [];
+    columnsToDisplay = ['Situacao', 'Nome', 'Sobrenome', 'Departamento', 'Ações', 'Teste'];
 
     constructor(private funcionarioService: FuncionarioService, public dialog: MatDialog) { }
 
@@ -37,5 +38,19 @@ export class HomeComponent implements OnInit {
         this.funcionarios = this.funcionariosGeral.filter(funcionario => {
             return funcionario.nome.toLowerCase().includes(value);
         })
+    }
+
+    openDialog() {
+        // openDialog(id : number){
+        this.dialog.open(ExcluirComponent, {
+            width: '350px',
+            height: '350px',
+            data: {
+                // id: id
+            }
+            //   })
+
+        })
+        // }
     }
 }
