@@ -45,6 +45,8 @@ Explicacao g = Generate | c = component
 
 ng g c pages/editar
 
+ng g c pages/detalhes
+
 Limpar o Cache
 npm cache clean --force
 
@@ -53,3 +55,12 @@ ng build
 
 Reiniciar o Servidor de Desenvolvimento
 ng serve
+
+ng g c components/excluir
+
+https://angular.io/guide/setup-local
+
+https://material.angular.io/
+
+
+https://www.youtube.com/playlist?list=PL8l5r7-11AADwxNy8aYGM2P2Dr0nB5ZW4
