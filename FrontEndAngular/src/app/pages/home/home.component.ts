@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ExcluirComponent } from 'src/app/components/excluir/excluir.component';
 import { Funcionario } from 'src/app/models/Funcionarios';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit {
     funcionarios: Funcionario[] = [];
     funcionariosGeral: Funcionario[] = [];
 
-    constructor(private funcionarioService: FuncionarioService) { }
+    constructor(private funcionarioService: FuncionarioService, public dialog: MatDialog) { }
 
     ngOnInit(): void {
         this.funcionarioService.GetFuncionarios().subscribe((data) => {
