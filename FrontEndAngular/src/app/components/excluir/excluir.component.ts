@@ -39,4 +39,8 @@ export class ExcluirComponent implements OnInit {
             window.location.reload();
         });
     }
+
+    cancelar() {
+        this.ref.close();
+    }
 }
